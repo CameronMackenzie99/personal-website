@@ -7,6 +7,7 @@ import ContactCTA from '../../components/ContactCTA.astro';
 import Hero from '../../components/Hero.astro';
 import Icon from '../../components/Icon.astro';
 import Pill from '../../components/Pill.astro';
+import CallToAction from '../../components/CallToAction.astro';
 
 interface Props {
 	entry: CollectionEntry<'work'>;
@@ -38,7 +39,16 @@ const { Content } = await entry.render();
 							<div class="tags">
 								{entry.data.tags.map((t) => <Pill>{t}</Pill>)}
 							</div>
+							<!-- <div class="socials">
+								<a href={entry.data.link} class="social">
+									<span class="sr-only">Github</span>
+									<Icon icon="github-logo" />
+								</a>
+							</div> -->
 							<p class="description">{entry.data.description}</p>
+							{entry.data.link && <CallToAction href={entry.data.link}>
+								Try it out
+							</CallToAction>}
 						</div>
 					</Hero>
 				</div>
@@ -73,6 +83,7 @@ const { Content } = await entry.render();
 		gap: 1.5rem;
 		justify-content: space-between;
 		align-items: center;
+		font-size: var(--text-2xl)
 	}
 
 	.tags {
@@ -84,6 +95,27 @@ const { Content } = await entry.render();
 		font-size: var(--text-lg);
 		max-width: 54ch;
 	}
+
+	.socials {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.625rem;
+		font-size: var(--icon-size);
+	}
+
+	.social {
+	display: flex;
+	padding: var(--icon-padding);
+	text-decoration: none;
+	color: var(--accent-dark);
+	transition: color var(--theme-transition);
+	}
+
+	.social:hover,
+	.social:focus {
+		color: var(--accent-text-over);
+	}
+
 
 	.content {
 		max-width: 65ch;
