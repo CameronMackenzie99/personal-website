@@ -1,7 +1,7 @@
 ---
 title: Student Loan Tracker
 publishDate: 2023-07-07 00:00:00
-img: /assets/graphs.png
+img: ../../assets/graphs.png
 img_alt: A graph from the web app showing total repaid and loan balance over time.
 link:  https://student-loan-tracker.vercel.app
 description: |

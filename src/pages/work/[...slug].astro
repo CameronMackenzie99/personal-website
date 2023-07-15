@@ -8,6 +8,7 @@ import Hero from '../../components/Hero.astro';
 import Icon from '../../components/Icon.astro';
 import Pill from '../../components/Pill.astro';
 import CallToAction from '../../components/CallToAction.astro';
+import { Image } from 'astro:assets';
 
 interface Props {
 	entry: CollectionEntry<'work'>;
@@ -39,12 +40,6 @@ const { Content } = await entry.render();
 							<div class="tags">
 								{entry.data.tags.map((t) => <Pill>{t}</Pill>)}
 							</div>
-							<!-- <div class="socials">
-								<a href={entry.data.link} class="social">
-									<span class="sr-only">Github</span>
-									<Icon icon="github-logo" />
-								</a>
-							</div> -->
 							<p class="description">{entry.data.description}</p>
 							{entry.data.link && <CallToAction href={entry.data.link}>
 								Try it out
@@ -55,7 +50,7 @@ const { Content } = await entry.render();
 			</header>
 			<main class="wrapper">
 				<div class="stack gap-10 content">
-					{entry.data.img && <img src={entry.data.img} alt={entry.data.img_alt || ''} />}
+					{entry.data.img && <Image src={entry.data.img} alt={entry.data.img_alt || ''} />}
 					<div class="content">
 						<Content />
 					</div>

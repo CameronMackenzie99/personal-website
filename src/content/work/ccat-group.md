@@ -1,7 +1,7 @@
 ---
 title: CCAT Group website
 publishDate: 2022-03-02 00:00:00
-img: /assets/ccat.png
+img: ../../assets/ccat.png
 img_alt: Passenger plane parked on a runway with a sunset
 link: https://github.com/CameronMackenzie99/ccatgroup
 description: |

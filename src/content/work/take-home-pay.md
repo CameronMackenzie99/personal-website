@@ -1,7 +1,7 @@
 ---
 title: Take home pay calculator
 publishDate: 2021-07-07 00:00:00
-img: /assets/thpicon.png
+img: ../../assets/thpicon.png
 img_alt: A graph from the web app showing total repaid and loan balance over time.
 link:  https://github.com/CameronMackenzie99/take-home-pay-calculator
 description: |
