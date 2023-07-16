@@ -18,7 +18,7 @@ import Skills from '../components/Skills.astro';
 
 // Image imports
 import { Image } from 'astro:assets';
-import portrait from '../assets/portrait1.jpg'
+import portrait from '../assets/portrait.jpg'
 
 // Content Fetching: List four most recent work projects
 const projects = (await getCollection('work'))
@@ -123,7 +123,7 @@ const projects = (await getCollection('work'))
 	}
 
 	.hero img {
-		aspect-ratio: 5 / 4;
+		aspect-ratio: 4 / 4;
 		object-fit: cover;
 		object-position: top;
 		border-radius: 1.5rem;
