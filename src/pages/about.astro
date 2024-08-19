@@ -1,111 +1,62 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-
-import ContactCTA from '../components/ContactCTA.astro';
-import Hero from '../components/Hero.astro';
-import landscape from '../assets/landscape1.jpg';
-import { Image } from 'astro:assets';
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="About | Cameron Mackenzie" description="About Cameron Mackenzie">
-	<div class="stack gap-20">
-		<main class="wrapper about">
-			<Hero
-				title="About"
-				tagline="Thanks for stopping by! Read below to learn more about myself and my background."
-			>
-				<Image
-					src={landscape}
-					alt="Cameron Mackenzie stood at the top of a hill with the Peak District in the background, arms outstretched"
-				/>
-			</Hero>
-
-			<section>
-				<h2 class="section-title">About me</h2>
-				<div class="content">
-					<p>
-						I am a full-stack engineer with a varied background, having entered the tech industry after completing a master's degree in chemistry.
-					</p>
-					<p>
-						I'm really interested in end-to-end and integration testing, and how it can be used to improve website accessibility and reliability. I believe that with the right tooling these tests can increase confidence in changes and improve maintainability. Tools such as react testing library, mock service worker and Playwright are good examples of tools I enjoy using to achieve this.
-					</p>
-					<p>
-						I love spending my free time cooking interesting food, exploring places, and indoor (hopefully one day outdoor) bouldering!
-					</p>
-				</div>
-			</section>
-			<section>
-				<h2 class="section-title">Education</h2>
-				<div class="content">
-					<p>Master of Chemistry, University of York, 2:1.</p>
-				</div>
-			</section>
-			<section>
-				<h2 class="section-title">Skills</h2>
-				<div class="content">
-					<p>React, Typescript, C#, ASP.NET Core, Angular, Blazor, AWS, Python, TailwindCSS, Next.js, Playwright end-to-end testing, CI/CD (Github, Azure, Jenkins), Integration & Unit Testing</p>
-				</div>
-			</section>
-		</main>
-
-		<ContactCTA />
-	</div>
+<BaseLayout
+  title="About | Cameron Mackenzie"
+  description="About Cameron Mackenzie"
+>
+  <div class="flex flex-col gap-12 w-full">
+    <span class="mt-12 md:mt-24 lg:mt-32 px-12">
+      <h1 class="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
+        About me
+      </h1>
+    </span>
+    <section id="about" class="px-12">
+      <div>
+        <p class="text-muted-foreground mt-4 max-w-[600px] text-xl">
+          I am a full-stack engineer with a varied background, having entered
+          the tech industry after completing a master's degree in chemistry. I'm
+          working at Urban Jungle as a <b>Senior Software Engineer</b>, shipping
+          new products and leading on new features.
+        </p>
+        <p class="text-muted-foreground mt-4 max-w-[600px] text-xl">
+          I'm really interested in shipping things that matter to users, and
+          backing up this functionality with good testing that doesn't cost the
+          earth to maintain. I love working in a team that shares these values,
+          mentoring and learning from colleagues with this in mind. Teaching
+          others is the fastest way to learn something new!
+        </p>
+        <p class="text-muted-foreground mt-4 max-w-[600px] text-xl">
+          I love spending my free time cooking interesting food, exploring
+          places with family and friends, and indoor (hopefully one day outdoor)
+          bouldering!
+        </p>
+      </div>
+    </section>
+    <section class="pt-12 bg-muted px-12">
+      <div class="">
+        <h2 class="text-xl font-bold tracking-tighter sm:text-2xl md:text-3xl">
+          Education
+        </h2>
+        <div>
+          <p class="text-muted-foreground mt-4 max-w-[600px] text-xl">
+            Master of Chemistry, University of York, 2:1.
+          </p>
+        </div>
+      </div>
+      <div class="my-12">
+        <h2 class="text-xl font-bold tracking-tighter sm:text-2xl md:text-3xl">
+          Skills
+        </h2>
+        <div>
+          <p class="text-muted-foreground mt-4 max-w-[600px] text-xl">
+            Angular, Typescript, C#, React, Python, Next.js, Kubernetes &
+            Docker, AWS, TailwindCSS, Playwright, CI/CD, Integration & Unit
+            Testing, Accessibility & Web Design
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
 </BaseLayout>
-
-<style>
-	.about {
-		display: flex;
-		flex-direction: column;
-		gap: 3.5rem;
-	}
-
-	img {
-		margin-top: 1.5rem;
-		border-radius: 1.5rem;
-		box-shadow: var(--shadow-md);
-	}
-
-	section {
-		display: flex;
-		flex-direction: column;
-		gap: 0.5rem;
-		color: var(--gray-200);
-	}
-
-	.section-title {
-		grid-column-start: 1;
-		font-size: var(--text-xl);
-		color: var(--gray-0);
-	}
-
-	.content {
-		grid-column: 2 / 4;
-	}
-
-	.content :global(a) {
-		text-decoration: 1px solid underline transparent;
-		text-underline-offset: 0.25em;
-		transition: text-decoration-color var(--theme-transition);
-	}
-
-	.content :global(a:hover),
-	.content :global(a:focus) {
-		text-decoration-color: currentColor;
-	}
-
-	@media (min-width: 50em) {
-		.about {
-			display: grid;
-			grid-template-columns: 1fr 60% 1fr;
-		}
-
-		.about > :global(:first-child) {
-			grid-column-start: 2;
-		}
-
-		section {
-			display: contents;
-			font-size: var(--text-lg);
-		}
-	}
-</style>
